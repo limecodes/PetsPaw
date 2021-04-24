@@ -5,4 +5,7 @@ export interface ColorsInterface {
   primary: string
   primaryMuted: string
   background: string
+  purple: string
+  green: string
+  yellow: string
 }
