@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
-import VoteTable from '../../assets/VoteTable'
 
 import { Button } from '../Button'
 
-interface StyledTabProps {
+export interface TabProps {
   background: string
 }
 
@@ -32,7 +31,7 @@ const StyledTabContainer = styled.button`
   }
 `
 
-const StyledTab = styled.div<StyledTabProps>`
+const StyledTab = styled.div<TabProps>`
   margin-bottom: 0.5rem;
   width: 138px;
   height: 198px;
@@ -46,11 +45,15 @@ const StyledTab = styled.div<StyledTabProps>`
   border-radius: 20px;
 `
 
-const Tab: FunctionComponent = () => (
+const Tab: FunctionComponent<TabProps> = ({ background }) => (
   <StyledTabContainer>
-    <StyledTab background={VoteTable} />
+    <StyledTab background={background} />
     <Button label="Voting" nonButton />
   </StyledTabContainer>
 )
+
+Tab.propTypes = {
+  background: PropTypes.string.isRequired,
+}
 
 export default Tab

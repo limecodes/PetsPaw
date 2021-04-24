@@ -1,12 +1,17 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import Tab from './Tab'
+import VoteTable from '../../assets/VoteTable'
+
+import Tab, { TabProps } from './Tab'
 
 export default {
   title: 'Navigation/Tab',
   component: Tab,
 }
 
-const Template: Story = args => <Tab {...args} />
+const Template: Story<TabProps> = args => <Tab {...args} />
 export const Basic = Template.bind({})
+Basic.args = {
+  background: VoteTable,
+}
