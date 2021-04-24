@@ -1,10 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import"],
+  "plugins": ["react", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb-typescript/base",
+    "react-app",
+    "airbnb-typescript",
     "prettier"
   ],
   "parserOptions": {
@@ -12,5 +13,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "rules": {}
+  "rules": {
+    "import/prefer-default-export": "warn"
+  }
 }
