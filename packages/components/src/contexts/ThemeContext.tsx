@@ -19,7 +19,7 @@ const fonts = css`
 
 const bodyStyles = css`
   color: ${({ theme: { text } }) => text};
-  font-family: 'Nunito Sans';
+  font-family: 'Jost';
   background-color: ${({ theme: { background } }) => background};
   margin: 0;
   -webkit-text-size-adjust: 100%;
@@ -29,6 +29,8 @@ const bodyStyles = css`
 `
 
 const GlobalStyle = createGlobalStyle`
+  ${fonts}
+
   html {
     box-sizing: border-box;
   }

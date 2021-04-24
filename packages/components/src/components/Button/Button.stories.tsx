@@ -28,3 +28,10 @@ Muted.args = {
   label: 'Muted',
   muted: true,
 }
+
+export const NonButton = Template.bind({})
+NonButton.args = {
+  label: 'Not a Button',
+  secondary: true,
+  nonButton: true,
+}

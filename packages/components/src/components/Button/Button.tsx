@@ -12,6 +12,7 @@ interface ButtonStyleProps {
 
 export interface ButtonProps extends ButtonStyleProps {
   label: string
+  nonButton?: boolean
 }
 
 const StyledButton = styled.button<ButtonStyleProps>`
@@ -25,6 +26,7 @@ const StyledButton = styled.button<ButtonStyleProps>`
   border-radius: 10px;
   width: 138px;
   height: 36px;
+  text-transform: uppercase;
 `
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -32,18 +34,29 @@ const Button: FunctionComponent<ButtonProps> = ({
   primary,
   secondary,
   muted,
+  nonButton,
 }) => (
-  <StyledButton primary={primary} secondary={secondary} muted={muted}>
+  <StyledButton
+    as={nonButton ? 'span' : 'button'}
+    primary={primary}
+    secondary={secondary}
+    muted={muted}
+  >
     {label}
   </StyledButton>
 )
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  muted: PropTypes.bool,
+  nonButton: PropTypes.bool,
 }
 
 Button.defaultProps = {
   primary: true,
+  nonButton: false,
 }
 
 export default Button
