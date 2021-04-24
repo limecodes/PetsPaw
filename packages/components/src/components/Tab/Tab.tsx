@@ -2,10 +2,18 @@ import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import colors from '../../constants/colors'
+import { TabColorEnum } from '../../types'
+
 import { Button } from '../Button'
 
-export interface TabProps {
+interface TabStyleProps {
   background: string
+  color?: string
+}
+
+export interface TabProps extends TabStyleProps {
+  label: string
 }
 
 const StyledTabContainer = styled.button`
@@ -31,11 +39,11 @@ const StyledTabContainer = styled.button`
   }
 `
 
-const StyledTab = styled.div<TabProps>`
+const StyledTab = styled.div<TabStyleProps>`
   margin-bottom: 0.5rem;
   width: 138px;
   height: 198px;
-  background-color: #b4b7ff;
+  background-color: ${({ color }) => colors[color]};
   background-image: url(${({ background }) => background});
   background-position: center;
   background-repeat: no-repeat;
@@ -45,15 +53,21 @@ const StyledTab = styled.div<TabProps>`
   border-radius: 20px;
 `
 
-const Tab: FunctionComponent<TabProps> = ({ background }) => (
+const Tab: FunctionComponent<TabProps> = ({ background, label, color }) => (
   <StyledTabContainer>
-    <StyledTab background={background} />
-    <Button label="Voting" nonButton />
+    <StyledTab background={background} color={color} />
+    <Button label={label} nonButton />
   </StyledTabContainer>
 )
 
 Tab.propTypes = {
   background: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  color: PropTypes.oneOf(Object.values(TabColorEnum)),
+}
+
+Tab.defaultProps = {
+  color: TabColorEnum.PURPLE,
 }
 
 export default Tab
