@@ -2,6 +2,14 @@
   "name": "@petspaw/app",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "format": "prettier . --write",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "jest",
+    "start": "webpack serve",
+    "build": "webpack"
+  },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
