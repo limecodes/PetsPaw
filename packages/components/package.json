@@ -1,7 +1,7 @@
 {
   "name": "@petspaw/components",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
