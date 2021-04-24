@@ -17,7 +17,8 @@
   ],
   "scripts": {
     "app:start": "yarn workspace @petspaw/app start",
-    "app:build": "yarn workspace @petspaw/app build"
+    "app:build": "yarn workspace @petspaw/app build",
+    "storybook": "yarn workspace @petspaw/components storybook"
   },
   "devDependencies": {
     "husky": "^4.3.0",
