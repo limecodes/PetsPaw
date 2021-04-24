@@ -18,6 +18,7 @@
   "scripts": {
     "app:start": "yarn workspace @petspaw/app start",
     "app:build": "yarn workspace @petspaw/app build",
+    "components:build": "yarn workspace @petspaw/components build",
     "storybook": "yarn workspace @petspaw/components storybook"
   },
   "devDependencies": {
