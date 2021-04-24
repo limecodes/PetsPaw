@@ -28,6 +28,10 @@
   "lint-staged": {
     "**/*": [
       "prettier --write --ignore-unknown"
+    ],
+    "**/src/**/*.{ts, tsx}": [
+      "eslint --fix",
+      "prettier --write"
     ]
   }
 }
