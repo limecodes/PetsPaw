@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
-import VoteTable from '../../assets/vote-table.svg'
+import VoteTable from '../../assets/VoteTable'
 
 import { Button } from '../Button'
 
@@ -40,6 +40,7 @@ const StyledTab = styled.div<StyledTabProps>`
   background-image: url(${({ background }) => background});
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 75%;
   border: 4px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   border-radius: 20px;
